@@ -15,9 +15,11 @@ No entanto, o código fornecido pela equipe contém um **erro lógico**, e sua m
 ---
 
 ## 📥 **Entrada:**
-📌 Um único número inteiro `N` (**N ≥ 0**) representando o número a ser verificado.  
+
+Um único número inteiro `N` (**N ≥ 0**) representando o número a ser verificado.  
 
 ## 📤 **Saída:**
+
 O programa deverá exibir:  
 ✅ Caso o número seja primo:  
    ```
@@ -32,6 +34,7 @@ _(Substituindo `N` pelo número fornecido na entrada.)_
 ---
 
 ## **Exemplos:**
+
 A tabela abaixo apresenta exemplos de entrada e saída esperada:
 
 | Entrada | Saída |
@@ -43,6 +46,7 @@ A tabela abaixo apresenta exemplos de entrada e saída esperada:
 ---
 
 ## ❌ **Código antes da correção:**
+
 ```python
 number = int(input())
 
@@ -59,12 +63,14 @@ if is_prime(number):
 else:
     print(f"{number} não é um número primo.")
 ```
-### 🚨 **Problema no código**
-- **Erro:** A condição `if n <= 4` está incorreta! Isso faz com que alguns números primos pequenos, como `2` e `3`, sejam classificados **erroneamente como não primos**.  
+### **Problema no código:**
+
+ **Erro:** A condição `if n <= 4` está incorreta! Isso faz com que alguns números primos pequenos, como `2` e `3`, sejam classificados **erroneamente como não primos**.  
 
 ---
 
 ## ✅ **Código corrigido e otimizado:**
+
 ```python
 # Entrada do número a ser verificado
 number = input("Digite um número inteiro: ")
@@ -94,7 +100,8 @@ else:
     else:
         print(f"{number} não é um número primo.")
 ```
-### **Otimizações Aplicadas**
+### **Otimizações Aplicadas:**
+
 ✔️ **Correção do erro lógico** – Agora `2` e `3` são corretamente identificados como primos.  
 ✔️ **Tratamento de entrada inválida** – Evitamos falhas ao lidar com valores não numéricos.  
 ✔️ **Melhoria na eficiência** – Aplicamos a técnica **6k ± 1**, que reduz verificações desnecessárias.  
@@ -102,11 +109,14 @@ else:
 ---
 
 ## **Por que verificamos até a raiz quadrada (`√N`)?**
+
 Ao invés de testar todos os números menores que `N`, testamos até `√N`, pois **qualquer fator maior que `√N` terá um fator correspondente menor que `√N`**. Isso reduz drasticamente o número de verificações! 💡  
 
 ---
 
-## **Código de Testes (`test_prime.py`)**
+## **Código de Testes: 
+
+(`test_prime.py`)**
 Para validar nossa implementação, adicionamos testes automatizados:
 
 ```python
@@ -136,7 +146,8 @@ pytest test_prime.py
 
 ---
 
-## **Comparação de Desempenho**
+## **Comparação de Desempenho:**
+
 Aqui está uma breve análise do tempo de execução dos diferentes métodos de verificação de números primos:
 
 | Método | Número de Iterações |
@@ -149,17 +160,19 @@ Aqui está uma breve análise do tempo de execução dos diferentes métodos de 
 
 ---
 
-## 📚 **Referências**
-- [Explicação Matemática sobre Números Primos](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:factorization/x2f8bb11595b61c86:prime-numbers/v/prime-numbers)
-- [Otimização Algorítmica na Verificação de Primos](https://www.geeksforgeeks.org/efficient-prime-number-testing/)
-- [GitHub Copilot para Debugging](https://github.com/features/copilot)
+## 📚 **Referências:**
+
+ [Explicação Matemática sobre Números Primos](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:factorization/x2f8bb11595b61c86:prime-numbers/v/prime-numbers)
+ [Otimização Algorítmica na Verificação de Primos](https://www.geeksforgeeks.org/efficient-prime-number-testing/)
+ [GitHub Copilot para Debugging](https://github.com/features/copilot)
 
 ---
 
 ## **Conclusão:**
-Com esta correção, agora o programa pode **verificar corretamente números primos**, garantindo que:  
+
+Com esta correção, agora o programa pode verificar corretamente números primos, garantindo que:  
 ✅ Números menores que `2` não sejam classificados como primos.  
-✅ Os cálculos sejam feitos de forma **eficiente e precisa** usando `√N`.  
-✅ A técnica **6k ± 1** melhora a performance ao eliminar múltiplos desnecessários.  
-✅ O programa lida corretamente com **entradas inválidas**, garantindo estabilidade.  
-✅ **Testes automatizados** asseguram que a lógica funciona em diferentes cenários. 
+✅ Os cálculos sejam feitos de forma eficiente e precisa usando `√N`.  
+✅ A técnica 6k ± 1 melhora a performance ao eliminar múltiplos desnecessários.  
+✅ O programa lida corretamente com entradas inválidas, garantindo estabilidade.  
+✅ Testes automatizados asseguram que a lógica funciona em diferentes cenários. 
